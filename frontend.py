@@ -8,7 +8,7 @@ def ask_question(question):
         response = requests.post(FASTAPI_URL, json={"query": question})
         response.raise_for_status()
         data = response.json()
-        answer = data.get("result", "No answer found.")
+        answer = data.get("messages")
         return answer
     except Exception as e:
         return f"Error: {str(e)}", None

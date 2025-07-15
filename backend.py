@@ -145,7 +145,8 @@ async def generate_travel_plan(request: TravelRequest):
     try:
         result = compiled_app.invoke([HumanMessage(content=request.query)])
         summary = result[-1]
-        return JSONResponse(content={"messages": summary})
+        print(f"######################{summary}")
+        return JSONResponse(content={"messages": summary.content})
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
