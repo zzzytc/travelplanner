@@ -17,17 +17,21 @@ An AI-powered travel planner built with **LangGraph**, **FastAPI**, and **Gradio
 ## 🛠️ Setup
 
 ```bash
-git clone https://github.com/your-username/ai-travel-planner.git
-cd ai-travel-planner
-python -m venv venv && source venv/bin/activate  # or venv\Scripts\activate on Windows
+git clone https://github.com/zzzytc/travelplanner.git
+cd travelplanner
+python -m venv demo && source demo/bin/activate
 pip install -r requirements.txt
 ```
 
 Create a `.env` file with your keys:
 
 ```
-OPENAI_API_KEY=your_key
-TAVILY_API_KEY=your_key
+WATSONX_APIKEY=your_key
+WATSONX_PROJECTID=your_key
+TAVILY_API_KEY = your_key
+LANGCHAIN_API_KEY=your_key
+LANGCHAIN_TRACING_V2=true
+
 ```
 
 ---
@@ -37,7 +41,7 @@ TAVILY_API_KEY=your_key
 **Start backend:**
 
 ```bash
-uvicorn main:app --reload
+uvicorn backend:app --reload
 ```
 
 **Start frontend:**
